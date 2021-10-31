@@ -6,7 +6,7 @@ import tkinter as tk
 
 piece = [" "," "," "," "," "," "," "," "," "]
 order = ['X','O','X','O','X','O','X','O','X']
-plays = {0:'',1:'',2:'',3:'',4:'',5:'',6:'',7:'',8:''}
+plays = {0:' ',1:'',2:' ',3:'',4:'  ',5:'',6:' ',7:'',8:' '}
 
 game = tk.Tk()
 game.title("TIC TAC TOE")
@@ -21,28 +21,28 @@ def checkWin():
     global count
     if((plays[0] == plays[1]) & (plays[0] == plays[2])): #first row
         prompt['text'] = str(plays[0]) + " wins!"
-        count == 11
+        
     elif((plays[0] == plays[3]) & (plays[3] == plays[6])): #first column
         prompt['text'] = str(plays[0]) + " wins!"
-        count == 11
+        
     elif((plays[1] == plays[4]) & (plays[1] == plays[7])): #second column
         prompt['text'] = str(plays[1]) + " wins!"
-        count == 11
+        
     elif((plays[2] == plays[5]) & (plays[5] == plays[8])): #third column
         prompt['text'] = str(plays[2]) + " wins!"
-        count == 11
+        
     elif((plays[3] == plays[4]) & (plays[4] == plays[5])): #second row
         prompt['text'] = str(plays[3]) + " wins!"
-        count == 11
+        
     elif((plays[6] == plays[7]) & (plays[8] == plays[7])): #third row
         prompt['text'] = str(plays[7]) + " wins!"
-        count == 11
+        
     elif((plays[0] == plays[4]) & (plays[4] == plays[8])): #top left to bot right diag
         prompt['text'] = str(plays[0]) + " wins!"
-        count == 11
+        
     elif((plays[2] == plays[6]) & (plays[4] == plays[6])): #bot left to top right 
         prompt['text'] = str(plays[2]) + " wins!"
-        count == 11
+        
     elif(count > 8):
         prompt['text'] = "It's a tie"
                   
@@ -51,7 +51,7 @@ def checkWin():
 def zero():
     global count
     print(plays[0])
-    if(plays[0] == ''):
+    if(plays[0] == ' '):
         if(count < 8):
             plays[0] = order[count]
             board[0]['text'] = order[count]
@@ -70,7 +70,7 @@ def one():
     
 def two():
     global count
-    if(plays[2] == ''):
+    if(plays[2] == ' '):
         if(count < 9):
             plays[2] = order[count]
             board[2]['text'] = order[count]
@@ -89,7 +89,7 @@ def three():
 def four():
     global count
     print(4)
-    if(plays[4] == ''):
+    if(plays[4] == '  '):
         if(count < 9):
             plays[4] = order[count]
             board[4]['text'] = order[count]
@@ -109,7 +109,7 @@ def five():
 def six():
     global count
     print(6)
-    if(plays[6] == ''):
+    if(plays[6] == ' '):
         if(count < 9):
             plays[6] = order[count]
             board[6]['text'] = order[count]
@@ -129,7 +129,7 @@ def seven():
 def eight():
     global count
     print(8)
-    if(plays[8] == ''):
+    if(plays[8] == ' '):
         if(count < 9):
             plays[8] = order[count]
             board[8]['text'] = order[count]
